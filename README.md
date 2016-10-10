@@ -26,3 +26,7 @@ or
 ```
 ./note.py first note
 ```
+* List all notes
+```
+./note.py
+```
