@@ -98,7 +98,7 @@ def displayNote(filename):
         if not os.path.isfile(filepath):
             print "Deleted file \'"+filepath+"\'"
         else:
-            print "File not deleted"
+            displayNote(filename)
     elif ans in ["s", "S"]:
         clr()
         words = "search "
