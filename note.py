@@ -149,12 +149,7 @@ def search(args):
 
 
 def interact(args):
-
-    if len(args) == 1 or "-h" in args or "--help" in args:
-        printHelp()
-        exit(0)
-    else:
-        del args[0]
+    del args[0]
 
     words = " ".join(args)
 
