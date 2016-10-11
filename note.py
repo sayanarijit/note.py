@@ -111,7 +111,8 @@ def displayNote(filename):
 
 def initDir():
     if not os.path.isdir(notesDir):
-        if os.makedirs(notesDir):
+        os.makedirs(notesDir)
+        if os.path.isdir(notesDir):
             print "Created directory: " + notesDir
         else:
             print "Error: Could\'nt create directory: " + notesDir
@@ -151,12 +152,15 @@ def search(args):
 def interact(args):
     del args[0]
 
+    initDir()
+
     words = " ".join(args)
 
     filenames = search(args)
     clr()
     i = 1
     opts = ["1"]
+
     if len(filenames) > 0:
         print str(len(filenames)) + " note(s) found"
         hr("-")
@@ -192,5 +196,3 @@ def interact(args):
 
 # Call
 interact(sys.argv)
-
-
