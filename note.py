@@ -20,14 +20,16 @@ notesDir = os.path.expanduser("~") + "/notes"
 
 def hr(c):
     rows, columns = os.popen('stty size', 'r').read().split()
-    for j in range(0, int(columns) / 2):
-        print c,
+    print "",
+    for j in range(0, int(columns)):
+        print "\b"+c,
     print
 
-
+    
 def clr():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+    
 def center(line):
     rows, columns = os.popen('stty size', 'r').read().split()
     space = (int(columns) - len(line))/2
@@ -35,6 +37,7 @@ def center(line):
         print " ",
     print line
 
+    
 def createNote(words):
     filename = re.sub("[^a-zA-Z0-9]","_",words)
     filepath = notesDir + "/" + filename
