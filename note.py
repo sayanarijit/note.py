@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 # v1.0 by Arijit Basu
 
