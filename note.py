@@ -25,11 +25,17 @@ def hr(c):
         print "\b"+c,
     print
 
-    
+
 def clr():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-    
+
+def allLower(words):
+    lower = []
+    for word in words:
+        lower.append(word.lower())
+    return lower
+
 def center(line):
     rows, columns = os.popen('stty size', 'r').read().split()
     space = (int(columns) - len(line))/2
@@ -37,7 +43,7 @@ def center(line):
         print " ",
     print line
 
-    
+
 def createNote(words):
     filename = re.sub("[^a-zA-Z0-9]","_",words)
     filepath = notesDir + "/" + filename
@@ -70,7 +76,6 @@ def displayNote(filename):
     with open(filepath) as f:
         content = f.read()
         print str(content)
-        f.close()
     hr("=")
     print "o) open in editor \t r) rename \t d) delete \t s) search again"
     hr("=")
@@ -137,14 +142,13 @@ def search(args):
 
     for filename in filenames:
         for word in args:
-            if word in filename.split("_"):
+            if word.lower() in allLower(filename.split("_")):
                 continue
             else:
                 filepath = notesDir + "/" + filename
                 with open(filepath) as f:
                     content = f.read()
-                    f.close()
-                if word in content:
+                if word.lower() in allLower(content.split()):
                     continue
                 elif filename in searched:
                     searched.remove(str(filename))
@@ -175,7 +179,7 @@ def interact(args):
         print
 
     hr("=")
-    print "n) new note \t s) search again"
+    print "n) new note \t s) search again \t h) help"
     hr("=")
     ans = raw_input("> ")
 
@@ -193,6 +197,9 @@ def interact(args):
         words = words + raw_input("Search for: ")
         clr()
         interact(words.split())
+    elif ans in ["h", "H"]:
+        printHelp()
+        exit(1)
     else:
         exit(0)
 
