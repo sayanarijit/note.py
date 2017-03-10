@@ -181,7 +181,12 @@ def interact(args):
     hr("=")
     print "n) new note \t s) search again \t h) help"
     hr("=")
-    ans = raw_input("> ")
+
+    try:
+        ans = raw_input("> ")
+    except:
+        print "\nInvalid input !"
+        exit(1)
 
     if ans in opts:
         clr()
