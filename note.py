@@ -13,7 +13,10 @@ notesDir = os.path.expanduser("~") + "/notes"
 #----------------------------------
 
 def hr(c):
-    rows, columns = os.popen('stty size', 'r').read().split()
+    try:
+        rows, columns = os.popen('stty size', 'r').read().split()
+    except:
+        columns = 100
     print "",
     for j in range(0, int(columns)):
         print "\b"+c,
