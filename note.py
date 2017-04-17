@@ -1,7 +1,5 @@
 #!/usr/bin/python2
 
-# v1.0 by Arijit Basu
-
 import os
 import subprocess
 import re
@@ -9,11 +7,7 @@ import sys
 
 # Configure -----------------------
 
-if os.name == "nt":
-    editor = "notepad"  # if windows
-else:
-    editor = "vi"       # other than windows
-
+editor = "vim"
 notesDir = os.path.expanduser("~") + "/notes"
 
 #----------------------------------
@@ -79,7 +73,12 @@ def displayNote(filename):
     hr("=")
     print "o) open in editor \t r) rename \t d) delete \t s) search again"
     hr("=")
-    ans = raw_input("> ")
+
+    try:
+        ans = raw_input("> ")
+    except:
+        print "\nInvalid input !"
+        exit(1)
 
     if ans in ["o","O"]:
         clr()
@@ -99,7 +98,12 @@ def displayNote(filename):
         displayNote(newname)
     elif ans in ["d","D"]:
         clr()
-        ans = raw_input("Delete file \'"+filepath+"\' [ y/N ] ? ")
+
+        try:
+            ans = raw_input("Delete file \'"+filepath+"\' [ y/N ] ? ")
+        except:
+            print "\nInvalid input !"
+            exit(1)
         clr()
         if ans in ["y","Y"]:
             os.remove(filepath)
@@ -110,7 +114,11 @@ def displayNote(filename):
     elif ans in ["s", "S"]:
         clr()
         words = "search "
-        words = words + raw_input("Search for: ")
+        try:
+            words = words + raw_input("Search for: ")
+        except:
+            print "\nInvalid input !"
+            exit(1)
         clr()
         interact(words.split())
 
@@ -141,6 +149,9 @@ def search(args):
     searched = os.listdir(notesDir)
 
     for filename in filenames:
+        if filename.startswith('.'):
+            searched.remove(str(filename))
+            continue
         for word in args:
             if word.lower() in allLower(filename.split("_")):
                 continue
@@ -199,7 +210,11 @@ def interact(args):
     elif ans in ["s", "S"]:
         clr()
         words = "search "
-        words = words + raw_input("Search for: ")
+        try:
+            words = words + raw_input("Search for: ")
+        except:
+            print "\nInvalid input !"
+            exit(1)
         clr()
         interact(words.split())
     elif ans in ["h", "H"]:
