@@ -1,11 +1,11 @@
 # note.py
 
-A simple, yet powerful and handy note taking python script. (Better than my previous note.sh)
+A simple, yet powerful and handy note taking python script.
 
-Requirement:
+### Requirement:
 * requires python (>2 or 3)
 
-Usage:
+### Usage:
 * Download [note.py](https://raw.githubusercontent.com/sayanarijit/note.py/master/note.py)
 ```
 wget https://raw.githubusercontent.com/sayanarijit/note.py/master/note.py
