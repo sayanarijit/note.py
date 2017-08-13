@@ -3,12 +3,12 @@
 A simple, yet powerful and handy note taking python script. (Better than my previous note.sh)
 
 Requirement:
-* requires python 2.* (tested on python 2.7)
+* requires python (>2 or 3)
 
 Usage:
-* Download [note.py](https://github.com/sayanarijit/note.py/releases/download/1.0.0/note.py)
+* Download [note.py](https://raw.githubusercontent.com/sayanarijit/note.py/master/note.py)
 ```
-wget https://github.com/sayanarijit/note.py/releases/download/1.0.0/note.py
+wget https://raw.githubusercontent.com/sayanarijit/note.py/master/note.py
 ```
 * Give execute permission
 ```
