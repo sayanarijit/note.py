@@ -10,7 +10,7 @@ from collections import OrderedDict
 # Configuration ----------------------------
 
 EDITOR = "vim"
-STORAGE = "/script/database/notes"
+STORAGE = os.path.expanduser("~") + "/notes"
 SCREEN_WIDTH = 100 # If not detected automatically
 
 #-------------------------------------------
@@ -191,4 +191,5 @@ if __name__ == "__main__":
         found = search(sys.argv[1:])
         display_search(found, qry=" ".join(sys.argv[1:]))
     else:
-        display_search(docs.keys())
+        found = docs.keys()
+        display_search(found)
