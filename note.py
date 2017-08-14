@@ -4,12 +4,13 @@ from __future__ import print_function
 import os
 import subprocess
 import sys
+from collections import OrderedDict
 
 
 # Configuration ----------------------------
 
 EDITOR = "vim"
-STORAGE = os.path.expanduser("~") + "/notes"
+STORAGE = "/script/database/notes"
 SCREEN_WIDTH = 100 # If not detected automatically
 
 #-------------------------------------------
@@ -72,8 +73,8 @@ def display_note(filename):
     print(("   "+filename+"   ").center(columns, "="))
     print("\n"+readfile(filename)+"\n")
 
-    choices = {"o": "open with "+EDITOR, "r": "rename",
-               "d": "delete", "b": "back", "q": "quit"}
+    choices = OrderedDict((("o","open with "+EDITOR), ("r","rename"),
+               ("d","delete"), ("b","back"), ("q","quit")))
     ans = select(choices).lower()
 
     if ans == "o":
@@ -157,7 +158,7 @@ def display_search(result, qry=None):
         i+= 1
     print()
 
-    choices = {"n": "new note", "a":"list all", "h": "help", "q": "quit"}
+    choices = OrderedDict((("n","new note"), ("a","list all"), ("h","help"), ("q","quit")))
     ans = select(choices)
     if ans in list(map(str, range(1,len(result)+1))):
         display_note(notes[ans])
