@@ -16,7 +16,7 @@ chmod +x note.py
 ```
 * Create your 1st note (Tip: default editor is vim; to change it, edit $EDITOR variable in note.py)
 ```
-./note.py my first note
+./note.py   # Enter title "My first note"
 ```
 * Write "I love cheeze" and close editor. Note is created. Now lets find the note
 ```
