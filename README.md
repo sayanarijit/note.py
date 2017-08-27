@@ -1,6 +1,6 @@
 # note.py
 
-A simple, yet powerful and handy note taking python script.
+A simple, yet powerful and handy notes management terminal script.
 
 ### Demo:
 ![demo.gif](https://raw.githubusercontent.com/sayanarijit/note.py/master/demo.gif)
