@@ -2,6 +2,9 @@
 
 A simple, yet powerful and handy note taking python script.
 
+### Demo:
+![demo.gif](https://raw.githubusercontent.com/sayanarijit/note.py/master/demo.gif)
+
 ### Requirement:
 * requires python (>2 or 3)
 
