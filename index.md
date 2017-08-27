@@ -1,22 +1,25 @@
 # note.py
 
-A simple, yet powerful and handy note taking python script. (Better than my previous note.sh)
+A simple, yet powerful and handy notes management terminal script.
 
-Requirement:
-* requires python 2.* (tested on python 2.7)
+### Demo:
+![demo.gif](https://raw.githubusercontent.com/sayanarijit/note.py/master/demo.gif)
 
-Usage:
-* Download [note.py](https://github.com/sayanarijit/note.py/releases/download/1.0.0/note.py)
+### Requirement:
+* requires python (>2 or 3)
+
+### Usage:
+* Download [note.py](https://raw.githubusercontent.com/sayanarijit/note.py/master/note.py)
 ```
-wget https://github.com/sayanarijit/note.py/releases/download/1.0.0/note.py
+wget https://raw.githubusercontent.com/sayanarijit/note.py/master/note.py
 ```
 * Give execute permission
 ```
 chmod +x note.py
 ```
-* Create your 1st note (Tip: default editor is vi; to change it, edit $editor variable in note.py)
+* Create your 1st note (Tip: default editor is vim; to change it, edit $EDITOR variable in note.py)
 ```
-./note.py my first note
+./note.py   # Enter title "My first note"
 ```
 * Write "I love cheeze" and close editor. Note is created. Now lets find the note
 ```
