@@ -75,6 +75,9 @@ def display_note(filename):
 
     choices = OrderedDict((("o","open with "+EDITOR), ("r","rename"),
                ("d","delete"), ("b","back"), ("q","quit")))
+
+    try: found
+    except: choices.pop("b")
     ans = select(choices).lower()
 
     if ans == "o":
