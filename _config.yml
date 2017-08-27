@@ -1,0 +1,8 @@
+title: Note.py
+description: A simple, yet powerful and handy note taking python script. (Better than my previous note.sh)
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
