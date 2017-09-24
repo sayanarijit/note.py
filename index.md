@@ -17,7 +17,7 @@ wget https://raw.githubusercontent.com/sayanarijit/note.py/master/note.py
 ```
 chmod +x note.py
 ```
-* Create your 1st note (Tip: default editor is vim; to change it, edit $EDITOR variable in note.py)
+* Create your 1st note (Tip: default editor is vim; to change it, edit "EDITOR" variable in note.py)
 ```
 ./note.py   # Enter title "My first note"
 ```
