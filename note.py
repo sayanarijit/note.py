@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+# -*-coding: utf-8 -*-
+"""
+Author:         Arijit Basu
+Email:          sayanarijit@gmail.com
+Documentation:  https://sayanarijit.github.io/note.py
+"""
 
 from __future__ import print_function
 import os
